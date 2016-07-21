@@ -1,6 +1,6 @@
 # qe-full
 ---
-A Dockerfile for  a full Quantum Espresso ver 5.4.0 (serial) container reachable through ssh.
+A Dockerfile for  a full Quantum Espresso ver 5.4.0  container reachable through ssh.
 
 **Only for bravehearted as its size is ~ 1.5 GB**
 
