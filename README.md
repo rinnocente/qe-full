@@ -64,7 +64,7 @@ This is a full package with source, all the serial binaries and also the paralle
 ```
 /home/qe 
          ---------- bin
-         ---------- espresso5.4.0
+         ---------- espresso-5.4.0
                                --------------bin
                                --------------dev-tools
                                --------------Doc
