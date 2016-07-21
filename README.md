@@ -60,7 +60,7 @@ The Dockerfile is on github : [Dockerfile](https://github.com/rinnocente/qe-full
 ### NB. this container is reachable via ssh through **your host port $PORT**, eventually from Internet at large.
 
 ---
-This is a full package with source, all the serial binaries and also the parallel binaries (with openmpi) :
+This is a full package with all sources, all  serial binaries and also all the parallel binaries (with openmpi) :
 ```
 /home/qe 
          ---------- bin
