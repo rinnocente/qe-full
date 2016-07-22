@@ -2,7 +2,7 @@
 ---
 A Dockerfile for  a full Quantum Espresso ver 5.4.0  container reachable through ssh.
 
-**Only for bravehearted as its size is ~ 1.5 GB**
+**Only for the bravehearted as its size is ~ 1.5 GB**
 
 *(It is based on ubuntu:16.04 )*
 
