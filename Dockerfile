@@ -100,11 +100,7 @@ RUN wget  --no-verbose  http://people.sissa.it/~inno/qe/qe.tgz \
 
 RUN sed -i 's#^StrictModes.*#StrictModes no#' /etc/ssh/sshd_config \
 	&& service   ssh  restart  \
-	&& usermod -aG docker qe \
-	&& echo "" >>/etc/hosts \
-	&& for i in 1 2 3 4 5 6 7 ; do echo "192.168.0.2${i}	node${i}" ; done
- >>/etc/hosts
-
+	&& usermod -aG docker qe 
 
 EXPOSE 22
 
