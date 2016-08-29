@@ -23,11 +23,9 @@ RUN  apt update \
 #
 # we add to the repositories the dockerproject repo and add its key
 #
-RUN echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" >>/etc/apt/
-sources.list 
+RUN echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" >>/etc/apt/sources.list 
 #
-RUN  apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58
-118E89F3A912897C070ADBF76221572C52609D 
+RUN  apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D 
 #
 #
 # we update the package list 
