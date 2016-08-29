@@ -1,4 +1,3 @@
-
 #
 # Quantum Espresso : a program for electronic structure calculations
 #    ssh version
@@ -9,9 +8,18 @@ FROM ubuntu:16.04
 #
 MAINTAINER roberto innocente <inno@sissa.it>
 #
+# this directive was inserted  not long ago (https://github.com/docker/docker/issues/14634)
+# it permits to define ARGs to be used only during the build and not in operations.
+# if it is not supported then the "DEBIAN_FRONTEND=noninteractive" definition
+# should be placed in front of every apt install to silence the warning messages
+# apt  would produce
+#
+ARG DEBIAN_FRONTEND=noninteractive
+#
 # we replace the standard http://archive.ubuntu.com repository
 # that is very slow, with the new mirror method :
 # deb mirror://mirror.ubuntu.com/mirrors.txt ...
+#
 ADD  http://people.sissa.it/~inno/qe/sources.list /etc/apt/
 RUN  chmod 644 /etc/apt/sources.list
 #
@@ -20,7 +28,7 @@ RUN  chmod 644 /etc/apt/sources.list
 # we install it
 #
 RUN  apt update \
-	&& DEBIAN_FRONTEND=noninteractive apt install -yq apt-transport-https 
+	&& apt install -yq apt-transport-https 
 #
 # we add to the repositories the dockerproject repo and add its key
 #
@@ -34,7 +42,7 @@ RUN  apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58
 # fftw3, openmpi , ...
 # and run ssh-keygen -A to generate all possible keys for the host
 #
-RUN DEBIAN_FRONTEND=noninteractive apt install -yq vim \
+RUN apt install -yq vim \
 		openssh-server \
 		sudo \
 		wget \
@@ -58,7 +66,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt install -yq vim \
 # the new docker repo
 #
 RUN	apt update \ 
-	&& DEBIAN_FRONTEND=noninteractive  apt install -yq docker-engine
+	&&  apt install -yq docker-engine
 #
 # we create the user 'qe' and add it to the list of sudoers
 RUN  adduser -q --disabled-password --gecos qe qe \
