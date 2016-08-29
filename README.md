@@ -63,16 +63,34 @@ The Dockerfile is on github : [Dockerfile](https://github.com/rinnocente/qe-full
 This is a full package with all sources, all  serial binaries and also all the parallel binaries (with openmpi) :
 ```
 /home/qe 
-         ---------- bin
-         ---------- espresso-5.4.0
-                               --------------bin
-                               --------------dev-tools
-                               --------------Doc
-                               --------------PP
-                               --------------PW
-                               ...
-         ---------- mpibin
-                               ...
+         |-- bin                 (serial binaries)
+         |   |-- average.x
+         |   |-- bands.x
+         |   .
+         |   .
+         |-- espresso-5.4.0      (full source and tests)
+         |   |-- COUPLE
+         |   |-- CPV
+         |   |-- Doc
+         |   .
+         |   .
+         |-- mpibin             (parallel binaries)
+         |   |-- average.x
+         |   |-- bands.x
+         |   .
+         |   .
+         |-- pseudo_potentials  (pseudo-potentials)
+         |   |-- SSSP_acc_PBE
+         |   |-- SSSP_acc_PBESOL
+         |   |-- SSSP_eff_PBE
+         |   |-- SSSP_eff_PBESOL
+         |   `-- SSSP_efficiency.txt
+         |
+         |-- pw.x               (files for a small test : program)
+         |-- relax.in                                  (: input)
+         |-- C.pz-rrkjus.UPF                           (: pseudo-pot)
+         |-- O.pz-rrkjus.UPF                           (: pseudo-pot)
+
 ```
 The full listing of the files is available at [tree] (https://github.com/rinnocente/qe-full/blob/master/full-tree.txt).
 
