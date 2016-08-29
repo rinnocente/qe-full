@@ -74,7 +74,8 @@ This is a full package with all sources, all  serial binaries and also all the p
          ---------- mpibin
                                ...
 ```
-The full tree listing of the files is available at (https://github.com/rinnocente/qe-full/blob/master/full-tree.txt)
+The full listing of the files is available at [tree] (https://github.com/rinnocente/qe-full/blob/master/full-tree.txt).
+
 In the `bin` subdir of ```/home/qe``` there are the serial binaries that can be run directly without any further ado (being ```/home/qe/bin``` inserted in the ```PATH``` env variable).
 
 In the ```espresso-5.4.0``` subdir there are the sources and the Docs in the Doc subdir of it.
