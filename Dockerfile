@@ -9,7 +9,7 @@ FROM ubuntu:16.04
 MAINTAINER roberto innocente <inno@sissa.it>
 #
 # The ARG directive is a new dockerfile directive (https://github.com/docker/docker/issues/14634).
-# It permits to define ARGs to be used only during the build and not in operations.
+# It permits to define, differently from ENV, variables to be used only during the build and not in operations.
 # If it is not supported by your docker version then the "DEBIAN_FRONTEND=noninteractive" definition
 # should be placed in front of every apt install to silence the scaring warning messages
 # apt  would produce
