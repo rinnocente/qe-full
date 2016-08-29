@@ -1,3 +1,4 @@
+
 #
 # Quantum Espresso : a program for electronic structure calculations
 #    ssh version
@@ -19,7 +20,7 @@ RUN  chmod 644 /etc/apt/sources.list
 # we install it
 #
 RUN  apt update \
-	&& apt install -y apt-transport-https 
+	&& DEBIAN_FRONTEND=noninteractive apt install -yq apt-transport-https 
 #
 # we add to the repositories the dockerproject repo and add its key
 #
@@ -33,7 +34,7 @@ RUN  apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58
 # fftw3, openmpi , ...
 # and run ssh-keygen -A to generate all possible keys for the host
 #
-RUN apt install -y vim \
+RUN DEBIAN_FRONTEND=noninteractive apt install -yq vim \
 		openssh-server \
 		sudo \
 		wget \
@@ -57,7 +58,7 @@ RUN apt install -y vim \
 # the new docker repo
 #
 RUN	apt update \ 
-	&&  apt install -y docker-engine
+	&& DEBIAN_FRONTEND=noninteractive  apt install -yq docker-engine
 #
 # we create the user 'qe' and add it to the list of sudoers
 RUN  adduser -q --disabled-password --gecos qe qe \
