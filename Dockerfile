@@ -1,7 +1,7 @@
 #
 # Quantum Espresso : a program for electronic structure calculations
-#    ssh version
-#
+#    full version : all sources, all serial programs, all parallel programs.
+#    reachable via ssh
 #
 # For many reasons we need to fix the ubuntu release:
 FROM ubuntu:16.04
