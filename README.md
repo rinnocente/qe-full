@@ -38,7 +38,7 @@ The normal way in which you use this container is sharing an input-output direct
 ```
 and when you run the container you share this directory with the container as a volume :
 ```
- $ CONT_ID=`docker run -v ~/qe-in-out:/home/qe/qe-in-out -P -d -t rinnocente/qe-ssh`
+ $ CONT_ID=`docker run -v ~/qe-in-out:/home/qe/qe-in-out -P -d -t rinnocente/qe-full`
  $ PORT=`docker port $CONT_ID|sed -e 's#.*:##'`
  $ ssh -p $PORT qe@127.0.0.1
 ```
