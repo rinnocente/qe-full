@@ -17,11 +17,11 @@ This image is for a **QE** container that is reachable through ssh.
 
 You can run the container in background  with :
 ```
-  $ CONT_ID=`docker run -P -d -t rinnocente/qe-full`
+  $ CONT=`docker run -P -d -t rinnocente/qe-full`
 ```
 in this way (-P) the std ssh port (=22) is mapped on a free port of the host. We can access the container discovering the port of the host on which the container ssh service is mapped :
 ```
-  $ PORT=`docker port $CONT_ID 22 |sed -e 's#.*:##'`
+  $ PORT=`docker port $CONT 22 |sed -e 's#.*:##'`
   $ ssh -p $PORT qe@127.0.0.1
 ```
 the initial password for the 'qe' user is 'mammamia', don't forget to change it immediately.
@@ -38,8 +38,8 @@ The normal way in which you use this container is sharing an input-output direct
 ```
 and when you run the container you share this directory with the container as a volume :
 ```
- $ CONT_ID=`docker run -v ~/qe-in-out:/home/qe/qe-in-out -P -d -t rinnocente/qe-full`
- $ PORT=`docker port $CONT_ID|sed -e 's#.*:##'`
+ $ CONT=`docker run -v ~/qe-in-out:/home/qe/qe-in-out -P -d -t rinnocente/qe-full`
+ $ PORT=`docker port $CONT|sed -e 's#.*:##'`
  $ ssh -p $PORT qe@127.0.0.1
 ```
 ---
@@ -47,12 +47,12 @@ The container does not die when you logout the ssh session because it is backgro
 
 You need to explicitly stop it if you want to re-use it later :
 ```
-$ docker stop $CONT_ID
+$ docker stop $CONT
 ```
 
 Or even remove it if you don't want to re-use it :
 ```
-$ docker rm -f $CONT_ID
+$ docker rm -f $CONT
 ```
 ---
 The Dockerfile is on github : [Dockerfile](https://github.com/rinnocente/qe-full)
