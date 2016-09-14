@@ -100,7 +100,4 @@ In the ```espresso-5.4.0``` subdir there are the sources and the Docs in the Doc
 OpenMPI is installed on the container and in the ```mpibin``` dir there are the parallel binaries using openMPI e.g.  ```mpirun -np 1 mpibin/pw.x <relax.in``` will run the parallel version of ```pw.x```
 
 
-
-
-
 ![qe](http://www.quantum-espresso.org/wp-content/uploads/2011/12/Quantum_espresso_logo.jpg)
